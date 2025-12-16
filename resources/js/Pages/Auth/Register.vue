@@ -1,171 +1,305 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center p-4">
-    <div class="w-full max-w-md">
-      <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8">
-        <div class="text-center mb-8">
-          <h1 class="text-3xl font-bold text-gray-900">POS System</h1>
-          <p class="text-gray-600 mt-2">Register your company</p>
-        </div>
+    <div class="h-screen overflow-hidden grid lg:grid-cols-2">
+        <!-- Left Side - Hero Section -->
+        <div
+            class="hidden lg:flex flex-col justify-between bg-zinc-900 p-12 text-white relative overflow-hidden"
+        >
+            <div
+                class="absolute inset-0 bg-gradient-to-br from-zinc-900/80 to-zinc-900/40 z-10"
+            ></div>
+            <img
+                src="/images/auth-hero.png"
+                alt="Hero"
+                class="absolute inset-0 w-full h-full object-cover opacity-40"
+            />
 
-        <form @submit.prevent="submit">
-          <div class="space-y-5">
-            <!-- Company Information -->
-            <div class="border-b pb-4 mb-4">
-              <h3 class="text-sm font-semibold text-gray-700 mb-3">Company Information</h3>
-              
-              <div class="space-y-4">
-                <div>
-                  <label for="company_name" class="block text-sm font-medium text-gray-700 mb-1">
-                    Company Name
-                  </label>
-                  <input
-                    id="company_name"
-                    v-model="form.company_name"
-                    type="text"
-                    required
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
-                    placeholder="My Company"
-                  />
-                  <p v-if="form.errors.company_name" class="mt-1 text-sm text-red-600">
-                    {{ form.errors.company_name }}
-                  </p>
+            <div class="relative z-20">
+                <div class="flex items-center gap-2">
+                    <img
+                        src="/images/pos-logo.png"
+                        alt="POS Logo"
+                        class="h-10 w-10"
+                    />
+                    <span class="text-2xl font-bold">POS System</span>
                 </div>
-
-                <div>
-                  <label for="company_email" class="block text-sm font-medium text-gray-700 mb-1">
-                    Company Email
-                  </label>
-                  <input
-                    id="company_email"
-                    v-model="form.company_email"
-                    type="email"
-                    required
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
-                    placeholder="contact@company.com"
-                  />
-                  <p v-if="form.errors.company_email" class="mt-1 text-sm text-red-600">
-                    {{ form.errors.company_email }}
-                  </p>
-                </div>
-              </div>
             </div>
 
-            <!-- Owner Information -->
-            <div>
-              <h3 class="text-sm font-semibold text-gray-700 mb-3">Owner Account</h3>
-              
-              <div class="space-y-4">
-                <div>
-                  <label for="owner_name" class="block text-sm font-medium text-gray-700 mb-1">
-                    Owner Name
-                  </label>
-                  <input
-                    id="owner_name"
-                    v-model="form.owner_name"
-                    type="text"
-                    required
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
-                    placeholder="John Doe"
-                  />
-                  <p v-if="form.errors.owner_name" class="mt-1 text-sm text-red-600">
-                    {{ form.errors.owner_name }}
-                  </p>
-                </div>
-
-                <div>
-                  <label for="owner_email" class="block text-sm font-medium text-gray-700 mb-1">
-                    Owner Email
-                  </label>
-                  <input
-                    id="owner_email"
-                    v-model="form.owner_email"
-                    type="email"
-                    required
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
-                    placeholder="owner@company.com"
-                  />
-                  <p v-if="form.errors.owner_email" class="mt-1 text-sm text-red-600">
-                    {{ form.errors.owner_email }}
-                  </p>
-                </div>
-
-                <div>
-                  <label for="password" class="block text-sm font-medium text-gray-700 mb-1">
-                    Password
-                  </label>
-                  <input
-                    id="password"
-                    v-model="form.password"
-                    type="password"
-                    required
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
-                    placeholder="••••••••"
-                  />
-                  <p v-if="form.errors.password" class="mt-1 text-sm text-red-600">
-                    {{ form.errors.password }}
-                  </p>
-                </div>
-
-                <div>
-                  <label for="password_confirmation" class="block text-sm font-medium text-gray-700 mb-1">
-                    Confirm Password
-                  </label>
-                  <input
-                    id="password_confirmation"
-                    v-model="form.password_confirmation"
-                    type="password"
-                    required
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
-                    placeholder="••••••••"
-                  />
-                </div>
-              </div>
+            <div class="relative z-20">
+                <blockquote class="space-y-2">
+                    <p class="text-2xl font-medium leading-relaxed">
+                        "This POS system transformed how we manage our business
+                        operations."
+                    </p>
+                    <footer class="text-sm">
+                        <div class="font-semibold">Sarah Chen</div>
+                        <div class="text-zinc-400">
+                            Business Owner & Entrepreneur
+                        </div>
+                    </footer>
+                </blockquote>
             </div>
-
-            <button
-              type="submit"
-              :disabled="form.processing"
-              class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 px-4 rounded-lg font-medium hover:from-indigo-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <span v-if="!form.processing">Register Company</span>
-              <span v-else>Registering...</span>
-            </button>
-          </div>
-        </form>
-
-        <div class="mt-6 text-center">
-          <p class="text-sm text-gray-600">
-            Already have an account?
-            <a href="/login" class="text-indigo-600 hover:text-indigo-700 font-medium">Sign in</a>
-          </p>
         </div>
 
-        <div class="mt-4 p-3 bg-blue-50 rounded-lg">
-          <p class="text-xs text-blue-800">
-            <strong>Note:</strong> After registration, 3 users will be created automatically:
-            Owner (you), Admin, and Cashier with default password "password".
-          </p>
+        <!-- Right Side - Register Form -->
+        <div
+            class="flex items-center justify-center p-8 bg-background overflow-y-auto h-screen"
+        >
+            <div class="w-full max-w-md space-y-8 my-8">
+                <!-- Mobile Logo -->
+                <div class="lg:hidden flex items-center gap-2 mb-8">
+                    <img
+                        src="/images/pos-logo.png"
+                        alt="POS Logo"
+                        class="h-10 w-10"
+                    />
+                    <span class="text-2xl font-bold">POS System</span>
+                </div>
+
+                <div class="space-y-2">
+                    <h1 class="text-3xl font-bold tracking-tight">
+                        Create your company account
+                    </h1>
+                    <p class="text-muted-foreground">
+                        Start managing your business with our powerful POS
+                        system.
+                    </p>
+                </div>
+
+                <form @submit.prevent="submit" class="space-y-6">
+                    <!-- Company Information -->
+                    <div class="space-y-4">
+                        <div class="pb-2">
+                            <h3 class="text-sm font-semibold">
+                                Company Information
+                            </h3>
+                            <p class="text-xs text-muted-foreground">
+                                Details about your business
+                            </p>
+                        </div>
+
+                        <div class="space-y-2">
+                            <Label for="company_name">Company Name</Label>
+                            <Input
+                                id="company_name"
+                                v-model="form.company_name"
+                                type="text"
+                                placeholder="Acme Inc."
+                                required
+                                :class="{
+                                    'border-destructive':
+                                        form.errors.company_name,
+                                }"
+                            />
+                            <p
+                                v-if="form.errors.company_name"
+                                class="text-sm text-destructive"
+                            >
+                                {{ form.errors.company_name }}
+                            </p>
+                        </div>
+
+                        <div class="space-y-2">
+                            <Label for="company_email">Company Email</Label>
+                            <Input
+                                id="company_email"
+                                v-model="form.company_email"
+                                type="email"
+                                placeholder="contact@acme.com"
+                                required
+                                :class="{
+                                    'border-destructive':
+                                        form.errors.company_email,
+                                }"
+                            />
+                            <p
+                                v-if="form.errors.company_email"
+                                class="text-sm text-destructive"
+                            >
+                                {{ form.errors.company_email }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <Separator />
+
+                    <!-- Owner Account -->
+                    <div class="space-y-4">
+                        <div class="pb-2">
+                            <h3 class="text-sm font-semibold">Owner Account</h3>
+                            <p class="text-xs text-muted-foreground">
+                                Your personal login details
+                            </p>
+                        </div>
+
+                        <div class="space-y-2">
+                            <Label for="owner_name">Full Name</Label>
+                            <Input
+                                id="owner_name"
+                                v-model="form.owner_name"
+                                type="text"
+                                placeholder="John Doe"
+                                required
+                                :class="{
+                                    'border-destructive':
+                                        form.errors.owner_name,
+                                }"
+                            />
+                            <p
+                                v-if="form.errors.owner_name"
+                                class="text-sm text-destructive"
+                            >
+                                {{ form.errors.owner_name }}
+                            </p>
+                        </div>
+
+                        <div class="space-y-2">
+                            <Label for="owner_email">Your Email</Label>
+                            <Input
+                                id="owner_email"
+                                v-model="form.owner_email"
+                                type="email"
+                                placeholder="john@acme.com"
+                                required
+                                :class="{
+                                    'border-destructive':
+                                        form.errors.owner_email,
+                                }"
+                            />
+                            <p
+                                v-if="form.errors.owner_email"
+                                class="text-sm text-destructive"
+                            >
+                                {{ form.errors.owner_email }}
+                            </p>
+                        </div>
+
+                        <div class="space-y-2">
+                            <Label for="password">Password</Label>
+                            <Input
+                                id="password"
+                                v-model="form.password"
+                                type="password"
+                                placeholder="••••••••"
+                                required
+                                :class="{
+                                    'border-destructive': form.errors.password,
+                                }"
+                            />
+                            <p
+                                v-if="form.errors.password"
+                                class="text-sm text-destructive"
+                            >
+                                {{ form.errors.password }}
+                            </p>
+                        </div>
+
+                        <div class="space-y-2">
+                            <Label for="password_confirmation"
+                                >Confirm Password</Label
+                            >
+                            <Input
+                                id="password_confirmation"
+                                v-model="form.password_confirmation"
+                                type="password"
+                                placeholder="••••••••"
+                                required
+                            />
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <Button
+                            type="submit"
+                            class="w-full"
+                            :disabled="form.processing"
+                        >
+                            <span v-if="!form.processing">Create Account</span>
+                            <span v-else>Creating...</span>
+                        </Button>
+
+                        <div class="relative">
+                            <div class="absolute inset-0 flex items-center">
+                                <span class="w-full border-t" />
+                            </div>
+                            <div
+                                class="relative flex justify-center text-xs uppercase"
+                            >
+                                <span
+                                    class="bg-background px-2 text-muted-foreground"
+                                    >OR</span
+                                >
+                            </div>
+                        </div>
+
+                        <Button type="button" variant="outline" class="w-full">
+                            <svg class="mr-2 h-4 w-4" viewBox="0 0 24 24">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4"
+                                />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853"
+                                />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                                    fill="#FBBC05"
+                                />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335"
+                                />
+                            </svg>
+                            Continue with Google
+                        </Button>
+                    </div>
+                </form>
+
+                <p class="text-center text-sm text-muted-foreground">
+                    Already have an account?{' '}
+                    <Link
+                        href="/login"
+                        class="text-primary hover:underline font-medium"
+                    >
+                        Sign in
+                    </Link>
+                </p>
+
+                <!-- Info box -->
+                <div class="p-4 bg-muted rounded-lg">
+                    <p class="text-xs text-muted-foreground">
+                        <strong class="font-medium text-foreground"
+                            >Note:</strong
+                        >
+                        After registration, 3 users will be created
+                        automatically: Owner (you), Admin, and Cashier with
+                        default password "password".
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </template>
 
 <script setup>
-import { useForm } from '@inertiajs/vue3';
+import { useForm, Link } from "@inertiajs/vue3";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Separator } from "@/components/ui/separator";
 
 const form = useForm({
-  company_name: '',
-  company_email: '',
-  owner_name: '',
-  owner_email: '',
-  password: '',
-  password_confirmation: '',
+    company_name: "",
+    company_email: "",
+    owner_name: "",
+    owner_email: "",
+    password: "",
+    password_confirmation: "",
 });
 
 const submit = () => {
-  form.post('/register', {
-    onFinish: () => form.reset('password', 'password_confirmation'),
-  });
+    form.post("/register", {
+        onFinish: () => form.reset("password", "password_confirmation"),
+    });
 };
 </script>
